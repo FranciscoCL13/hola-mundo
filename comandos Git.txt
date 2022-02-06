@@ -1,0 +1,97 @@
+git: comando principal
+
+git --version: version del git
+
+CONFIGURACION DE PRIMERA VEZ
+
+
+
+git config --list para ver mi configuracion
+
+git config --global user.name (nombre deseado)
+
+git config --global user.email "fcontreras1311@gmail.com"
+
+-------------
+
+git init: inicializar un repositorio .git
+
+git status: ver el estado de tu archivo y del repositorio
+
+git add (archivo): Agregar el archivo para darle seguimiento en el area de preparacion
+ejemplo git add utils.js
+git add . : agregar todo en el directorio
+
+git commit -m "mensaje": confirmar
+ejemplo: git commit -m "se crea el archivo utils.js con la funcion cubo"
+git commit --amend :modificar mensaje con el "vi": 
+
+git rm --cached (archivo): sacar de area de preparacion
+ejemplo: git rm --cached utils.js 
+
+-------
+
+git log: Registro de todos los cambios y modificaciones
+git log --stat: ver inserciones
+git log --pretty=oneline : ver bonito en una linea
+git log --pretty=format:"%h - %an, %ar : %s" :
+parte del numero id, quien lo hizo, cuando lo hizo, comentario.
+git log --pretty=format:"%h %s" --graph : te da forma grafica
+
+
+-------
+
+git branch : ver en que rama estamos
+git branch (nombrede nueva rama): ejemplo: git branch develop
+git branch -m (nombre) : cambiar nombre a rama(estando dentro de rama)
+git branch -d (nombre) : borrar rama
+
+
+
+git checkout (nombrede rama): cambiar de rama, ejemplo: git chekout develop
+git checkout - : cambiar entre dos ramas simultaneamente
+
+git merge (nombre rama) : fusionar ramas (Estando en rama que deseas agregar o fusionar)
+
+
+------
+
+cat -n (archivo): mostrar lo que hay en el archivo
+
+-----------
+
+
+CONECTAR CON GIT HUB LLAVES
+
+crear repositorio (REMOTO)
+
+ssh-keygen -t ed25519 -C "fcontreras1311@gmail.com" generar llave (GENERAR EN GITHUB)
+
+eval "$(ssh-agent -s)" : Conectar con llave - levantar el agente
+
+ssh-add ~/.ssh/id_ed25519   agregar llave - PONER CONTRASEÑA 
+
+ssh-add -l -E sha256  : Confirma
+
+git clone git@github.com:FranciscoCL13/PrimerRepositorio.git : clonar el repositorio completo y descargo todos los archivos
+yes, contraseña, enter. : clonar todo a la carpeta deseada
+
+----------------
+
+subir a github los nuevos cambios
+
+git remote -v : tener información de la vinculación al repositorio (ESTANDO DENTRO DEL REPOSITORIO)
+
+
+git push (remoto) (rama): Subir cambios de local al remoto
+ejemplo git push origin main
+
+git pull (remoto (rama): Subir de remoto al local
+ejemplo git pull origin main
+------------
+
+Crear un nuevo repositorio en GITHUB
+
+
+
+C:\Users\fcont\.ssh (mi carpeta de llaves)
